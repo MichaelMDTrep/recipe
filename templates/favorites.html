@@ -1,0 +1,7 @@
+<h1>{{ Author }}'s Favorites</h1>
+
+<form action="{% url 'favorite_recipe' favorite.pk}" method="POST">
+    {% csrf_token %}
+    <button type="submit" , name="recipe_id" , value="{{recipe.id}}" , class="btn btn-primary btn-sm">Favorite</button>
+    - {{total_favorites}}
+</form>

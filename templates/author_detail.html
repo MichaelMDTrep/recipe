@@ -1,0 +1,5 @@
+<h1>Nice to meet you my name is {{ Author.name }}</h1>
+<h2>{{ Author.bio }}</h2>
+{% for Recipe in Recipes %}
+<h3><a href="/recipe/{{ Recipe.id }}/">{{ Recipe.title }}</a></h3>
+{% endfor %}

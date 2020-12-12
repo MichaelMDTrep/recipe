@@ -1,0 +1,23 @@
+<h1>This is the Recipe that you need to cook your meal: {{ Recipe.title }}</h1>
+<h2>By:<a href="/authors/{{Recipe.author.id}}">{{Recipe.author.name }}</a></h2>
+<h3>{{ Recipe.description }}</h3>
+<h3>{{ Recipe.instruction }}</h3>
+<h3>Time Required: {{ Recipe.time_required }}</h3>
+<h4>Instructions</h4>
+<p>{{ Recipe.instruction }}</p>
+{{Recipe.Author}}
+
+{% if request.user == recipe.author.user or request.user.is_staff %}
+<a href="/recipe/{{ Recipe.id }}/edit/"><button>Edit</button></a>
+<br />
+{% endif %}
+
+{% if request.user.is_authenticated %}
+<a href="/recipe/{{ Recipe.id }}/favorites/"><button>Favorite</button>
+    {% endif %}
+    <br />
+    {% if request.user.is_authenticated %}
+
+    <a href="/"><button>Home</button></a>
+    {% endif %}
+    </div>
